@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.link a {
+  text-decoration: none;
+  color: rgb(0, 0, 255);
+}
+
+.container {
+  max-width: 720px;
+  padding: 20px;
+  background-color: rgb(220, 220, 220);
+  border-radius: 10px;
+  transition: 0.3s;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.addeds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.command {
+  width: 100%;
+  height: 30px;
+  font-size: 25px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.canPlaceOnContainer,
+.canDestroyContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.canPlaceOnContainer .canPlaceOn,
+.canDestroyContainer .canDestroy {
+  width: 100%;
+  height: 30px;
+  font-size: 25px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  transition: 0.3s;
+  outline: none;
+}
+
+.canPlaceOnContainer label,
+.canDestroyContainer label {
+  position: absolute;
+  left: 0;
+  font-size: 25px;
+  color: rgb(100, 100, 100);
+  top: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.canPlaceOnContainer .canPlaceOn:focus,
+.canPlaceOnContainer .canPlaceOn:valid,
+.canDestroyContainer .canDestroy:focus,
+.canDestroyContainer .canDestroy:valid {
+  border-bottom: 2px solid rgb(0, 0, 255);
+}
+
+.canPlaceOnContainer .canPlaceOn:focus~label,
+.canPlaceOnContainer .canPlaceOn:valid~label,
+.canDestroyContainer .canDestroy:focus~label,
+.canDestroyContainer .canDestroy:valid~label {
+  top: -15px;
+  font-size: 15px;
+  color: rgb(0, 0, 255);
+}
+
+.add {
+  font-size: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+.add:hover {
+  color: rgb(100, 100, 100);
+}
+
+.toggles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.keepOnDeathContainer .keepOnDeath {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+
+.keepOnDeathContainer .keepOnDeath:checked {
+  background-color: rgba(100, 100, 100);
+}
+
+.keepOnDeathContainer label {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.lockMode {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons #copy,
+.buttons #clear,
+.buttons #undo {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  color: rgb(0, 0, 0);
+}
+
+.buttons #copy:hover,
+.buttons #clear:hover,
+.buttons #undo:hover {
+  color: rgb(100, 100, 100);
+}
+
+.buttons #copy::after,
+.buttons #clear::after,
+.buttons #undo::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+
+.buttons #copy:hover::after,
+.buttons #clear:hover::after,
+.buttons #undo:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 490px) {
+  .inputs {
+    flex-direction: column;
+  }
+
+  .addeds .canPlaceOnContainer,
+  .addeds .canDestroyContainer {
+    width: 100%;
+  }
+}

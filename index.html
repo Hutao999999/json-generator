@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RawText JSON Generator</title>
+  <link rel="stylesheet" href="./style/tellraw.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="showcase" id="showcase"></div>
+    <input type="text" class="command" readonly>
+    <div class="addeds">
+      <div class="textContainer">
+        <input type="text" class="text" id="text" required>
+        <label for="text">Text</label>
+        <button class="add">Add</button>
+      </div>
+      <div class="selectorContainer">
+        <input type="text" class="selector" id="selector" required>
+        <label for="selector">Selector</label>
+        <button class="add">Add</button>
+      </div>
+      <div class="scoreboardContainer">
+        <div class="name">
+          <input type="text" class="items" id="items" required>
+          <label for="items">Name</label>
+        </div>
+        <div class="scoreboard">
+          <input type="text" class="scoreboard" id="scoreboard" required>
+          <label for="scoreboard">Scoreboard</label>
+        </div>
+        <button class="add">Add</button>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="copy">Copy</button>
+      <button id="clear">Clear</button>
+      <button id="undo">Undo</button>
+    </div>
+  </div>
+  <div class="link">
+    <a href="./index.html">Tellraw JSON Generator</a>
+    <a href="./give.html">Give JSON Generator</a>
+  </div>
+
+  <script src="./scripts/tellraw.js"></script>
+</body>
+
+</html>

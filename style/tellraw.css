@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.link a {
+  text-decoration: none;
+  color: rgb(0, 0, 255);
+}
+
+.container {
+  max-width: 720px;
+  padding: 20px;
+  background-color: rgb(220, 220, 220);
+  border-radius: 10px;
+  transition: 0.3s;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.showcase {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(100, 100, 100);
+  resize: none;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  overflow: scroll;
+}
+
+.command {
+  width: 100%;
+  height: 30px;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.addeds {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.addeds .textContainer,
+.addeds .selectorContainer,
+.addeds .scoreboardContainer {
+  width: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addeds .scoreboardContainer {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addeds .textContainer .text,
+.addeds .selectorContainer .selector,
+.addeds .scoreboardContainer .name .items,
+.addeds .scoreboardContainer .scoreboard .scoreboard {
+  width: 100%;
+  height: 30px;
+  font-size: 25px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  transition: 0.3s;
+}
+
+.addeds .textContainer .text:focus,
+.addeds .textContainer .text:valid,
+.addeds .selectorContainer .selector:focus,
+.addeds .selectorContainer .selector:valid,
+.addeds .scoreboardContainer .name .items:focus,
+.addeds .scoreboardContainer .name .items:valid,
+.addeds .scoreboardContainer .scoreboard .scoreboard:focus,
+.addeds .scoreboardContainer .scoreboard .scoreboard:valid {
+  border-bottom: 2px solid rgb(0, 0, 255);
+}
+
+.addeds .textContainer label,
+.addeds .selectorContainer label,
+.addeds .scoreboardContainer .name label {
+  position: absolute;
+  left: 0;
+  font-size: 25px;
+  color: rgb(100, 100, 100);
+  top: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.addeds .scoreboardContainer .scoreboard label {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  font-size: 25px;
+  transition: 0.3s;
+  color: rgb(100, 100, 100);
+  pointer-events: none;
+}
+
+.addeds .textContainer .text:focus~label,
+.addeds .textContainer .text:valid~label,
+.addeds .selectorContainer .selector:focus~label,
+.addeds .selectorContainer .selector:valid~label,
+.addeds .scoreboardContainer .name .items:focus~label,
+.addeds .scoreboardContainer .name .items:valid~label {
+  top: -15px;
+  font-size: 15px;
+  color: rgb(0, 0, 255);
+}
+
+.addeds .scoreboardContainer .scoreboard .scoreboard:focus~label,
+.addeds .scoreboardContainer .scoreboard .scoreboard:valid~label {
+  top: 35px;
+  color: rgb(0, 0, 255);
+  font-size: 15px;
+}
+
+.add {
+  font-size: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+.add:hover {
+  color: rgb(100, 100, 100);
+}
+
+.showcase .bold {
+  font-weight: 600;
+  text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+.showcase .italics {
+  font-style: italic;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons #copy,
+.buttons #clear,
+.buttons #undo {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  color: rgb(0, 0, 0);
+}
+
+.buttons #copy:hover,
+.buttons #clear:hover,
+.buttons #undo:hover {
+  color: rgb(100, 100, 100);
+}
+
+.buttons #copy::after,
+.buttons #clear::after,
+.buttons #undo::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+
+.buttons #copy:hover::after,
+.buttons #clear:hover::after,
+.buttons #undo:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 740px) {
+  .addeds {
+    flex-direction: column;
+  }
+
+  .addeds .textContainer,
+  .addeds .selectorContainer,
+  .addeds .scoreboardContainer,
+  .addeds .scoreboardContainer .name,
+  .addeds .scoreboardContainer .scoreboard {
+    width: 100%;
+  }
+
+  .container {
+    max-width: none;
+    width: 90%;
+  }
+}

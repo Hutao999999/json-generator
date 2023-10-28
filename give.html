@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give JSON Generator</title>
+  <link rel="stylesheet" href="./style/give.css">
+</head>
+
+<body>
+  <div class="container">
+    <input type="text" id="command" class="command" readonly>
+    <div class="addeds">
+      <div class="inputs">
+        <div class="canPlaceOnContainer">
+          <input type="text" id="canPlaceOn" class="canPlaceOn" required>
+          <label for="canPlaceOn">Can place on</label>
+          <button class="add">Add</button>
+        </div>
+        <div class="canDestroyContainer">
+          <input type="text" class="canDestroy" id="canDestroy" required>
+          <label for="canDestroy">Can destroy</label>
+          <button class="add">Add</button>
+        </div>
+      </div>
+      <div class="toggles">
+        <div class="keepOnDeathContainer">
+          <input type="checkbox" id="keepOnDeath" class="keepOnDeath">
+          <label for="keepOnDeath">Keep on death</label>
+        </div>
+        <select id="lockMode" class="lockMode">
+          <option value="Lock Mode">Lock Mode</option>
+          <option value="Lock in inventory">Lock in inventory</option>
+          <option value="Lock in slot">Lock in slot</option>
+        </select>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="copy">Copy</button>
+      <button id="clear">Clear</button>
+      <button id="undo">Undo</button>
+    </div>
+  </div>
+  <div class="link">
+    <a href="./index.html">Tellraw JSON Generator</a>
+    <a href="./give.html">Give JSON Generator</a>
+  </div>
+
+  <script src="./scripts/give.js"></script>
+</body>
+
+</html>
