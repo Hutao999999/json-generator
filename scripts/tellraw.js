@@ -73,8 +73,10 @@ scoreboardAdd.addEventListener("click", ev => {
     scoreboardScoreboardInput.value.length > 0
   ) {
     result.push({
-      name: scoreboardNameInput.value,
-      scoreboard: scoreboardScoreboardInput.value.trim()
+      score: {
+        name: scoreboardNameInput.value,
+        scoreboard: scoreboardScoreboardInput.value.trim()
+      }
     })
 
     scoreboardNameInput.value = ""
@@ -121,10 +123,7 @@ const reload = () => {
       } else {
         strings += item.selector
       }
-    } else if (
-      item.name &&
-      item.scoreboard
-    ) {
+    } else if (item.score) {
       strings += "2147483647"
     }
   }
